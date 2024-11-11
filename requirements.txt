@@ -1,0 +1,12 @@
+pytest          
+pytest-cov      
+coverage
+
+
+pytest-mock
+requests
+requests-mock
+pytest-benchmark
+pytest-asyncio
+bandit
+
