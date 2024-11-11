@@ -16,6 +16,7 @@ bcrypt
 PyJWT
 sqlalchemy
 pydantic
+pydantic[email]
 uvicorn
 ## Para testclient de fastapi
 httpx
