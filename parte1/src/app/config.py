@@ -8,11 +8,12 @@ class Settings(BaseSettings):
 
     Atributos:
         DATABASE_URL: (str): La URL de conexión a la base de datos SQLite.
-            En un entorno Docker, esto generalmente apunta al servicio de SQLite definido en docker-compose.
+        SALT_ROUNDS: (int): Número de rondas para el algoritmo de hashing.
+        JWT_SECRET_KEY: (str): Clave secreta para firmar los tokens JWT.
     """
 
     # Lo ideal sería que estos valores se carguen desde variables de entorno, pero para simplificar, los valores se definen aquí.
-    MONGO_URL: str
+    DATABASE_URL: str = "sqlite:///./test.db"
     SALT_ROUNDS: int = 10
     JWT_SECRET_KEY: str = "este_es_un_secreto_para_la_parte1"
 

@@ -17,3 +17,7 @@ PyJWT
 sqlalchemy
 pydantic
 uvicorn
+## Para testclient de fastapi
+httpx
+pydantic_settings
+passlib
