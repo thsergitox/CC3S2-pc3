@@ -7,9 +7,9 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/pc3,type=bind,consistency=delegated",
     "runArgs": ["-h","thsergitox"],
     "remoteEnv": {
-        "FLASK_DEBUG": "true",
-        "FLASK_APP": "counter:app",
-        "PORT": "5000",
+        "FASTAPI_DEBUG": "true",
+        "FASTAPI_APP": "main:app",
+        "PORT": "8080",
         "PYTHONIOENCODING": "utf-8"
     },
     "customizations": {

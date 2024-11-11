@@ -10,3 +10,10 @@ pytest-benchmark
 pytest-asyncio
 bandit
 
+## Dependencias para la pc 
+fastapi
+bcrypt
+PyJWT
+sqlalchemy
+pydantic
+uvicorn
