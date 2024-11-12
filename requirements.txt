@@ -11,13 +11,15 @@ pytest-asyncio
 bandit
 
 ## Dependencias para la pc 
-fastapi
+fastapi[standard]
 bcrypt
 PyJWT
 sqlalchemy
 pydantic
 pydantic[email]
 uvicorn
+dependency-injector
+
 ## Para testclient de fastapi
 httpx
 pydantic_settings
