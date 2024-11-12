@@ -29,7 +29,8 @@
                 "redhat.vscode-yaml",
                 "ms-azuretools.vscode-docker",
                 "streetsidesoftware.code-spell-checker",
-                "mhutchie.git-graph"
+                "mhutchie.git-graph",
+                "ms-vscode.makefile-tools"
             ]
         }
     },
