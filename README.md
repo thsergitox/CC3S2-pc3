@@ -1,4 +1,4 @@
-# Práctica Califica 3
+# Práctica Calificada 3
 
 Este el repositorio para la tercera PC del curso de Desarrollo de Software.
 
@@ -8,8 +8,9 @@ Este el repositorio para la tercera PC del curso de Desarrollo de Software.
 .
 |-- Makefile
 |-- README.md
-|-- ov=parte1
-|   `-- src
+|-- docs
+|   |-- PARTE1.md
+|   `-- PARTE2.md
 |-- parte1
 |   `-- src
 |       |-- app
@@ -52,12 +53,24 @@ Este el repositorio para la tercera PC del curso de Desarrollo de Software.
 |           |-- test_auth_service.py
 |           |-- test_jwt_service.py
 |           `-- test_user_repository.py
+|-- parte1.db
 |-- parte2
 |   `-- src
 |       |-- app
-|       |   `-- __init__.py
+|       |   |-- __init__.py
+|       |   |-- logger.py
+|       |   |-- main.py
+|       |   |-- models.py
+|       |   |-- monitor.py
+|       |   |-- observer.py
+|       |   `-- target
+|       |       `-- hola.txt
+|       |-- file_monitor.db
+|       |-- logs
+|       |   |-- file_monitor_20241112_055753.log
 |       `-- tests
-|           `-- __init__.py
+|           |-- __init__.py
+|           `-- test_monitor.py
 `-- requirements.txt
 ```
 
@@ -86,3 +99,18 @@ make test1
 ```
 
 El análisis de la parte 1 está [aquí](./docs/PARTE1.md)
+
+#### Parte 2
+Para correr la aplicación de monitoreo usando la librería `watchdogs` que ya implementa un Observer, para monitorear directorios, el cual nos ayudará a implementar nuestro patrón Observador con dos suscriptores (el de la base de datos y el logger), de igual forma, debemos encontranos en el directorio raíz definido en el Dockerfile que inició el devcontainer `pc3`.
+
+```
+make run2
+```
+
+Para correr las pruebas de la parte:
+
+```
+make test2
+```
+
+El análisis de la parte 2 está [aquí](./docs/PARTE2.md)
