@@ -1,15 +1,40 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from contextlib import contextmanager, AbstractContextManager
+from typing import Generator
+from typing import Callable
+import logging
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+from sqlalchemy import create_engine, orm
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import Session
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+logger = logging.getLogger(__name__)
 
-def get_db():
-    """Dependencia que proporciona una sesión de la base de datos"""
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+Base = declarative_base()
+
+
+class SessionLocal:
+
+    def __init__(self, db_url: str) -> None:
+        self._engine = create_engine(db_url, echo=True)
+        self._session_factory = orm.scoped_session(
+            orm.sessionmaker(
+                autocommit=False,
+                autoflush=False,
+                bind=self._engine,
+            ),
+        )
+
+    def create_database(self) -> None:
+        Base.metadata.create_all(self._engine)
+
+    @contextmanager
+    def session(self) -> Generator[Session, None, None]:
+        session: Session = self._session_factory()
+        try:
+            yield session
+        except Exception:
+            logger.exception("Session rollback because of exception")
+            session.rollback()
+            raise
+        finally:
+            session.close()

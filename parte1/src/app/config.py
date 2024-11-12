@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     """
 
     # Lo ideal sería que estos valores se carguen desde variables de entorno, pero para simplificar, los valores se definen aquí.
-    DATABASE_URL: str = "sqlite:///./test.db"
+    DATABASE_URL: str = "sqlite:///./parte1.db"
     SALT_ROUNDS: int = 10
     JWT_SECRET_KEY: str = "este_es_un_secreto_para_la_parte1"
 

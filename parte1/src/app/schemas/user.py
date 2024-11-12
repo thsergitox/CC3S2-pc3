@@ -1,13 +1,13 @@
 from pydantic import BaseModel, EmailStr
 
 class UserSchema(BaseModel):
-    id: str
+    id: int
     name: str
     email: EmailStr
     role: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class UserCreateSchema(BaseModel):
     name: str
