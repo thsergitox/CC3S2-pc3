@@ -73,7 +73,7 @@ La primera cosa que tienes que hacer es correr el `devcontainer`.
 Una vez logré levantarse, nos apoyaremos de nuestro archivo `Makefile` para facilitarnos la ejecución de comandos.
 
 #### Parte 1
-Para correr la aplicación de FastAPI:
+Para correr la aplicación de FastAPI, debemos encontranos en el directorio raíz definido en el Dockerfile que inició el devcontainer `pc3`.
 
 ```
 make run1
@@ -84,3 +84,5 @@ Para correr las pruebas de la parte:
 ```
 make test1
 ```
+
+El análisis de la parte 1 está [aquí](./docs/PARTE1.md)
