@@ -29,7 +29,7 @@ RUN python3 -m pip install --upgrade pip && \
 # Habilitar colores en la terminal
 ENV TERM=xterm-256color
 
-EXPOSE 5000
+EXPOSE 8000
 
 # Cambiar al usuario normal para desarrollo
 USER $USERNAME

@@ -9,7 +9,7 @@
     "remoteEnv": {
         "FASTAPI_DEBUG": "true",
         "FASTAPI_APP": "main:app",
-        "PORT": "8080",
+        "PORT": "8000",
         "PYTHONIOENCODING": "utf-8"
     },
     "customizations": {
