@@ -24,3 +24,6 @@ dependency-injector
 httpx
 pydantic_settings
 passlib
+
+# Para la parte 2
+watchdog

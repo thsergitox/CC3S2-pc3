@@ -1,4 +1,4 @@
-.PHONY: runparte1 testparte1
+.PHONY: run1 test1
 
 # Comando para iniciar la aplicación de la parte1
 run1:
@@ -7,3 +7,9 @@ run1:
 # Comando para testear la aplicación de la parte1
 test1:
 	cd parte1/src && pytest tests -vv --cov=app --cov-report=term-missing --cov-branch
+
+run2:
+	cd parte2/src && PYTHONPATH=. python3 app/main.py
+
+test2:
+	cd parte2/src && pytest tests -vv --cov=app --cov-report=term-missing --cov-branch
