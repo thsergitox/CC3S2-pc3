@@ -1,18 +1,18 @@
-from contextlib import contextmanager, AbstractContextManager
+from contextlib import contextmanager
 from typing import Generator
-from typing import Callable
 import logging
-
 from sqlalchemy import create_engine, orm
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session
+
+from app.db.interfaces.db_interface import DatabaseInterface
 
 logger = logging.getLogger(__name__)
 
 Base = declarative_base()
 
 
-class SessionLocal:
+class SessionLocal(DatabaseInterface):
 
     def __init__(self, db_url: str) -> None:
         self._engine = create_engine(db_url, echo=True)

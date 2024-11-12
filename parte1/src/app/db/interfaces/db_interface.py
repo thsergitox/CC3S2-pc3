@@ -1,8 +1,16 @@
 from abc import ABC, abstractmethod
+from contextlib import AbstractContextManager
 from sqlalchemy.orm import Session
 
-class ConnectionDBInterface(ABC):
+class DatabaseInterface(ABC):
+    """Interface for database session management"""
+    
     @abstractmethod
-    def get_session(self) -> Session:
-        """Obtiene una nueva sesión de la base de datos"""
+    def create_database(self) -> None:
+        """Create all database tables"""
+        pass
+        
+    @abstractmethod
+    def session(self) -> AbstractContextManager[Session]:
+        """Get database session"""
         pass
